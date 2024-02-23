@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    container_name: taskmanager-server
+    image: renier1989/taskmanager_server:test01
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - MAILTRAP_USER=${MAILTRAP_USER}
+      - MAILTRAP_PASS=${MAILTRAP_PASS}
+      - MAILTRAP_HOST=${MAILTRAP_HOST}
+      - MAILTRAP_PORT=${MAILTRAP_PORT}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - PORT=${PORT}
+    ports:
+      - "4002:4000"
